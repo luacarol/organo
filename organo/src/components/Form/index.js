@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Button from '../Button/Button'
 import DropdownList from '../DropdownList'
 import TextField from '../TextField'
@@ -15,9 +16,13 @@ const Form = () => {
         'Inovação e Gestão'
     ]
 
+    const [nome, setNome] = useState('')
+    const [cargo, setCargo] = useState('')
+    const [imagem, setImagem] = useState('')
+
     const aoSalvar = (event) => {
         event.preventDefault()
-        console.log("O formulário foi submetido.")
+        console.log("O formulário foi submetido => ", nome, cargo, imagem)
     }
 
     return (
@@ -25,9 +30,28 @@ const Form = () => {
             <form onSubmit={aoSalvar}>
                 <h2>Preencha os dados para criar o card do colaborador</h2>
                 
-                <TextField obrigatorio={true} label="Nome" placeholder="Digite seu nome"/>
-                <TextField obrigatorio={true} label="Cargo" placeholder="Digite seu cargo"/>
-                <TextField label="Imagem" placeholder="Digite sua imagem"/>
+                <TextField
+                    obrigatorio={true}
+                    label="Nome"
+                    placeholder="Digite seu nome"
+                    valor={nome}
+                    aoAlterado={valor => setNome(valor)}
+                />
+
+                <TextField 
+                    obrigatorio={true}
+                    label="Cargo"
+                    placeholder="Digite seu cargo"
+                    valor={cargo} 
+                    aoAlterado={valor => setCargo(valor)}
+                />
+
+                <TextField
+                    label="Imagem"
+                    placeholder="Digite sua imagem"
+                    valor={imagem}
+                    aoAlterado={valor => setImagem(valor)}
+                />
 
                 <DropdownList obrigatorio={true} label="Time" itens={times}/>
 
