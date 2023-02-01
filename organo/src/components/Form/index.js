@@ -4,7 +4,7 @@ import DropdownList from '../DropdownList'
 import TextField from '../TextField'
 import './Form.css'
 
-const Form = () => {
+const Form = (props) => {
 
     const times = [
         'Programação',
@@ -23,7 +23,9 @@ const Form = () => {
 
     const aoSalvar = (event) => {
         event.preventDefault()
-        console.log("O formulário foi submetido => ", nome, cargo, imagem, time)
+        props.aoColaboradorCadastrado({
+            nome, cargo, imagem, time
+        })
     }
 
     return (
