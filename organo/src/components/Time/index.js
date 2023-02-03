@@ -8,7 +8,7 @@ const Time = (props) => {
     const corPrimaria = { borderColor: props.corPrimaria }
 
     return (
-        <section className='time' style={corSecundaria} >
+        (props.colaboradores.length > 0) && <section className='time' style={corSecundaria} >
             <h3 style={corPrimaria} >{props.nome}</h3>
 
             <div className='collaborators'>
