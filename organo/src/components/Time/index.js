@@ -1,4 +1,5 @@
 import './Time.css'
+import Collaborator from '../Collaborator';
 
 const Time = (props) => {
 
@@ -9,6 +10,8 @@ const Time = (props) => {
     return (
         <section className='time' style={corSecundaria} >
             <h3 style={corPrimaria} >{props.nome}</h3>
+
+            <Collaborator />
         </section>
     )
 }
