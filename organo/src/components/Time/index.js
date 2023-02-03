@@ -10,7 +10,11 @@ const Time = (props) => {
     return (
         <section className='time' style={corSecundaria} >
             <h3 style={corPrimaria} >{props.nome}</h3>
-            {props.colaboradores.map( colaborador => <Collaborator nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem} /> )}
+
+            <div className='collaborators'>
+                {props.colaboradores.map( colaborador => <Collaborator nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem} /> )}
+            </div>
+            
         </section>
     )
 }
