@@ -6,16 +6,6 @@ import './Form.css'
 
 const Form = (props) => {
 
-    const times = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'Devops',
-        'UX e Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
-
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
@@ -56,7 +46,7 @@ const Form = (props) => {
                     aoAlterado={valor => setImagem(valor)}
                 />
 
-                <DropdownList obrigatorio={true} label="Time" itens={times} valor={time} aoAlterado={valor => setTime(valor)}/>
+                <DropdownList obrigatorio={true} label="Time" itens={props.times} valor={time} aoAlterado={valor => setTime(valor)}/>
 
                 <Button>
                     Criar Card
